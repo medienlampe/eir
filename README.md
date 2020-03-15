@@ -10,12 +10,12 @@ The data is provided via a simple JSON file.
 ## Usage
 
 - Fork this repository
-- Run `npm install` to get all dependencies
-- Run `npm start` to start the local development environment
+- Run `yarn install` to get all dependencies
+- Run `yarn start` to start the local development environment
 - Adjust team id inside `_scripts/getMemberstats.sh`
 
 ### Hints
 - Site data can be adjusted in `_data/site.json`
 - The output will be exported to the folder `_site`
-- You can build your library without running the development environment first with `npm run build`
-- Tests are defined in `eir.test.js` and are available via `npm test`
+- You can build your library without running the development environment first with `yarn run build`
+- Tests are defined in `eir.test.js` and are available via `yarn test`
