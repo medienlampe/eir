@@ -1,3 +1,5 @@
 node_modules
 _data/teamscore.json
 _data/donorlist.json
+_site/*
+!_site/.keep
