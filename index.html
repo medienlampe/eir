@@ -1,84 +1,62 @@
 ---
 layout: page
 ---
-
-<h1>Collection of Spirits</h1>
-<h2>Table of contents</h2>
-<ul>
-  {% for spirit in spirits.collections %}
-  <li>
-    <a href="#spirit-{{ spirit.name | slugify }}">{{ spirit.name }}</a>
-  </li>
-  {% endfor %}
-</ul>
-<!--<p>
-  There are currently
-  <strong>{{ spirits.collections.size }}</strong> types of different
-  spirits in this collection.
-</p>-->
-{% for spirit in spirits.collections %}
+<h2>Team Statistics</h2>
 <section>
-  <h2 id="spirit-{{ spirit.name | slugify }}">
-    <!--<a href="#spirit-{{ spirit.name }}">-->{{ spirit.name
-    }}<!--</a>-->
-  </h2>
-  <p>
-    There are currently <strong>{{ spirit.collection.size }}</strong> types of
-    {{ spirit.name }} in this collection:
-  </p>
   <table>
     <thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
-        <th class="table table__thead table__thead--small">Age</th>
-        <th>Rating</th>
-        <th>Added</th>
-        <!--<th>Bottles</th>-->
-        <th>Available</th>
-        <th>Comments</th>
+        <th class="table table__thead table__thead--small">Score</th>
+        <th>Work Units finished</th>
       </tr>
     </thead>
     <tbody>
-      {% for bottle in spirit.collection %}
+      {% for team in teamscore %}
       <tr>
-        <td id="spirit-{{ spirit.name | slugify }}-{{ bottle.name | slugify }}">
-          <a
-            href="#spirit-{{ spirit.name | slugify }}-{{
-              bottle.name | slugify
-            }}"
-            >{{ bottle.name }}</a
-          >
+        <td id="team-{{ team.team | slugify }}">
+          {{ team.team }}
         </td>
         <td>
-          {% if bottle.age > 0 %}
-          <strong>{{ bottle.age }} years</strong>
-          {% else %} - {% endif %}
+          {{ team.teamname }}
         </td>
         <td>
-          {% if bottle.rating > 0 %}
-          <strong>{{ bottle.rating }}</strong>
-          {% else %} - {% endif %}
+          {{ team.score }}
         </td>
         <td>
-          <strong>{{ bottle.since }}</strong>
-        </td>
-        <!--<td>
-          Bottles: <strong>{{ bottle.amount }}</strong>
-        </td>-->
-        <td>
-          <strong>
-            {% if bottle.fill == 0 %}no (empty){% elsif bottle.open %}yes{% else
-            %}no{% endif %}
-          </strong>
-        </td>
-        <td class="table table__tbody table__tbody--smalltext">
-          {% if bottle.additionals.size > 0 %}
-          {{ bottle.additionals }}
-          {% endif %}
+          {{ team.wu }}
         </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </section>
-{% endfor %}
+
+<h2>List of Donators</h2>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th class="table table__thead table__thead--small">Score</th>
+        <th>Work Units finished</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for donator in donorlist %}
+      <tr>
+        <td id="donator-{{ donator.name | slugify }}">
+          {{ donator.name }}
+        </td>
+        <td>
+          {{ donator.score }}
+        </td>
+        <td>
+          {{ donator.wu }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
