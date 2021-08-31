@@ -10,7 +10,7 @@
     "jest": "^25.1.0"
   },
   "devDependencies": {
-    "tar": "^6.0.1"
+    "tar": "^6.1.9"
   },
   "scripts": {
     "start": "gulp watch & eleventy --watch --serve",
